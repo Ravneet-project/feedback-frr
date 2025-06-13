@@ -1,0 +1,308 @@
+/* ===== GLOBAL SETTINGS ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("/assets/images/admin") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  color: #000; /* default text color inside cards */
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  border-bottom: 2px solid black;
+  background-color: #222 !important;
+}
+
+.navbar-brand img {
+  object-fit: cover;
+}
+
+/* ===== MAIN SECTION ===== */
+main {
+  flex: 1;
+  padding: 60px 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CARD BASE SHARED ===== */
+.login-card,
+.register-card,
+.portal-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
+  animation: pop 0.6s ease;
+  width: 100%;
+  color: wheat;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth hover effect */
+}
+
+.portal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+/* ===== LOGIN CARD SPECIFIC ===== */
+.login-card {
+  max-width: 500px;
+  text-align: center;
+}
+
+.login-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+}
+
+/* ===== REGISTER CARD SPECIFIC ===== */
+.register-card {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.register-img {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FORM STYLES ===== */
+form {
+  flex: 1 1 300px;
+  min-width: 260px;
+}
+
+.form-control,
+.form-select {
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  transition: box-shadow 0.25s ease;
+  color: #000;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.35);
+  outline: none;
+}
+
+/* ===== BUTTONS ===== */
+.register-card .btn-primary {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  border: none;
+  font-weight: bold;
+  color: #000;
+  transition: filter 0.25s ease;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+}
+
+.login-card .btn-primary {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  border: none;
+  font-weight: bold;
+  color: #000;
+  transition: filter 0.25s ease;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+}
+
+.portal-card .btn {
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: filter 0.25s ease;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+  filter: brightness(0.95);
+}
+
+/* ===== TEXT ===== */
+h2.text-center,
+.login-title {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login-title {
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* ===== FOOTER ===== */
+footer.footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+  user-select: none;
+  box-shadow: inset 0 1px 0 #2c3035;
+
+  
+}
+
+/* ===== MANAGE USERS PAGE TABLE ===== */
+.container.mt-5 {
+  color: #fff; /* white text for better contrast */
+}
+
+h2.mb-4 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Glassmorphism style for table */
+.table {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+thead.table-dark {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Badges */
+.badge {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.35em 0.65em;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+  color: white;
+}
+
+.badge.bg-secondary {
+  background-color: #6c757d !important;
+  color: white;
+}
+
+/* Center action buttons */
+td.text-center {
+  text-align: center;
+}
+
+/* Button style */
+.btn-sm {
+  min-width: 90px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-sm:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* ===== FEEDBACK HISTORY CARD & TABLE ===== */
+.dashboard-section {
+  padding-top: 40px;
+}
+
+.card-custom {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+canvas {
+  max-height: 300px;
+}
+
+table {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+thead th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Priority colors in table */
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-success {
+  color: #198754 !important;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
